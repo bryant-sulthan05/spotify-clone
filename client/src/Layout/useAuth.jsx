@@ -4,9 +4,9 @@ import { useState } from 'react'
 import axios from 'axios'
 
 export const useAuth = (code) => {
-    const [accessToken, setAccessToken] = useState();
-    const [refreshToken, setRefreshToken] = useState();
-    const [expiresIn, setExpiresIn] = useState();
+    const [accessToken, setAccessToken] = useState('');
+    const [refreshToken, setRefreshToken] = useState('');
+    const [expiresIn, setExpiresIn] = useState('');
 
     useEffect(() => {
         axios.post('http://localhost:3001/login', {
@@ -15,6 +15,7 @@ export const useAuth = (code) => {
             console.log(res.data)
         }).catch(() => {
             window.location = '/'
+            // console.log("error mulu jir")
         })
     }, [code]);
 }
