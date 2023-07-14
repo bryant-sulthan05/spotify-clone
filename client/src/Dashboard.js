@@ -90,7 +90,7 @@ export default function Dashboard({ code }) {
           />
         ))}
         {searchResults.length === 0 && (
-          <div className="text-center" style={{ whiteSpace: "pre" }}>
+          <div className="text-center" style={{ whiteSpace: "pre", background: '#c0c0c0', padding: '2rem', borderRadius: '2%', fontFamily: 'Poppins', fontWeight: 'bold' }}>
             {lyrics}
           </div>
         )}
@@ -98,6 +98,6 @@ export default function Dashboard({ code }) {
       <div>
         <Player accessToken={accessToken} trackUri={playingTrack?.uri} />
       </div>
-    </Container>
+    </Container >
   )
 }
